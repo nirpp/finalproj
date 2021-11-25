@@ -13,19 +13,19 @@
          
          
             <label>
-                <input type="text" name="fname" placeholder="enter name">
+                <input type="text" name="fname" placeholder="enter Project name">
                 <div class="line-box">          
                 <div class="line"></div>
                 </div>
             </label>
             <label>
-                <input type="text" name="lname" placeholder="enter lastname">
+                <input type="text" name="projStatus" placeholder="Project Status">
                 <div class="line-box">          
                 <div class="line"></div>
                 </div>
             </label>
             <label>
-                <input type="text" name="email" placeholder="email">
+                <input type="text" name="Reason" placeholder="Reason for Cancellation">
                 <div class="line-box">          
                 <div class="line"></div>
                 </div>

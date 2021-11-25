@@ -55,9 +55,10 @@
                     <input type="text" id="country">
                   </div>
                   <div class="input_wrap">
-                    <input type="submit" value="Register Now" class="submit_btn"><br>
+                    <input type="submit" value="Register Now" class="submit_btn">
                     <a href="upload.php">Next</a>
                   </div>
+                  
                 </div>
                 
               </form>
