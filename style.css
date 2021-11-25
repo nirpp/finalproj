@@ -1,0 +1,38 @@
+body{
+    background-color:#83d0c9;
+}
+
+
+form{
+text-align: center;
+}
+label {  
+    
+      display: block;  
+    
+      position: relative;  
+  
+      margin: 40px 0px; 
+ 
+    }
+   
+button{
+    display: inline-block; 
+    font-weight: bold;
+}
+button:hover {  
+       background: #8BC34A;  
+       color: #ffffff; 
+    }
+hr{
+   border: dotted #EAF6F6 6px;
+   border-bottom: none;
+   width: 4%;
+   margin: 50px auto;
+          }
+ .fcc-btn {
+            background-color: #199319;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+          }
