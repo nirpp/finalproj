@@ -36,12 +36,7 @@
                 <div class="line"></div>
                 </div>
             </label>
-            <label>
-                <input type="password" name="password" placeholder="password">
-                <div class="line-box">          
-                <div class="line"></div>
-                </div>
-            </label>
+           
          
             </form>
             <hr>
@@ -49,43 +44,33 @@
     </body>
 </html>
 
-<?php 
-$localhost = "localhost"; #localhost
-$dbusername = "root"; #username of phpmyadmin
-$dbpassword = "";  #password of phpmyadmin
-$dbname = "registration";  #database name
- 
-#connection string
-$conn = mysqli_connect($localhost,$dbusername,$dbpassword,$dbname);
- 
-if (isset($_POST["submit"]))
- {
-     #retrieve file title
-        $title = $_POST["title"];
-     
-    #file name with a random number so that similar dont get replaced
-     $pname = rand(1000,10000)."-".$_FILES["file"]["name"];
- 
-    #temporary file name to store file
-    $tname = $_FILES["file"]["tmp_name"];
-   
-     #upload directory path
-$uploads_dir = 'images';
-    #TO move the uploaded file to specific location
-    move_uploaded_file($tname, $uploads_dir.'/'.$pname);
- 
-    #sql query to insert into database
-    $sql = "INSERT into fileup(title,image) VALUES('$title','$pname')";
- 
-    if(mysqli_query($conn,$sql)){
- 
-    echo "File Sucessfully uploaded";
-    }
-    else{
-        echo "Error";
-    }
-}
- 
- 
-?>
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
 
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+if(!$conn){
+    die("connection to this database failed due to" . mysqli_connect_error());
+}
+$fname = $_POST['fname'];
+    $projstatus = $_POST['projstatus'];
+    $reason = $_POST['reason'];
+    $username = $_POST['username'];
+    
+    $sql = "INSERT INTO projdetails('fname', 'projstatus', 'reason', 'username' ) VALUES ('$fname', '$projstatus', '$reason', '$username');"
+// Check connection
+if ($conn->query($sql) == true){
+    // echo "Successfully inserted";
+
+    // Flag for successful insertion
+    $insert = true;
+}
+else{
+    echo "ERROR: $sql <br> $conn->error";
+}
+
+// Close the database connection
+$conn->close();
+?>
